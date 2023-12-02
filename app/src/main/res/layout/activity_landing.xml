@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Invisible spacer view to push everything up -->
+    <View
+        android:id="@+id/spacer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_centerVertical="true"/>
+
+    <!-- Centered Logo -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/spacer"
+        android:layout_marginBottom="32dp" />
+
+    <!-- Sign Up button positioned below the logo -->
+    <Button
+        android:id="@+id/buttonSignUp"
+        style="@style/Button"
+        android:layout_width="296dp"
+        android:layout_height="53dp"
+        android:text="Sign Up"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/logo"
+        android:layout_marginTop="16dp" />
+
+    <!-- Sign In button positioned below the Sign Up button -->
+    <Button
+        android:id="@+id/buttonSignIn"
+        style="@style/ButtonSignIn"
+        android:layout_width="296dp"
+        android:layout_height="53dp"
+        android:text="Sign In"
+        android:textColor="@color/choco"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/buttonSignUp"
+        android:layout_marginTop="16dp" />
+
+</RelativeLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+    <TextView
+        android:id="@+id/textSignIn"
+        android:layout_width="274dp"
+        android:layout_height="76dp"
+        android:text="Sign In"
+        style="@style/heading"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"/>
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        style="@style/EditTextRounded"
+        android:hint="Phone Number"
+        android:layout_below="@id/textSignIn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:inputType="phone"/>
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        style="@style/EditTextRounded"
+        android:hint="Password"
+        android:layout_below="@id/editTextPhone"
+        android:layout_marginTop="8dp"
+        android:inputType="textPassword"/>
+    <Button
+        android:id="@+id/buttonSignIn"
+        style="@style/Button"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:text="Sign In"
+        android:layout_below="@id/editTextPassword"
+        android:layout_marginTop="24dp"/>
+    <TextView
+        android:id="@+id/textViewForgotPasswordPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot Password?"
+        android:textSize="13sp"
+        android:textColor="@color/darkchoco"
+        android:textStyle="bold"
+        android:layout_below="@id/buttonSignIn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+    <TextView
+        android:id="@+id/textViewSignUpPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account? Sign Up"
+        android:textSize="13sp"
+        android:textColor="@color/darkchoco"
+        android:layout_below="@id/textViewForgotPasswordPrompt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+</RelativeLayout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/order_add"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="8dp">
+
+    <!-- Placeholder for the image -->
+    <ImageView
+        android:id="@+id/img_item_picture"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="16dp"
+        android:scaleType="centerCrop"
+        tools:src="@tools:sample/avatars" />
+
+    <!-- Name of the dish -->
+    <TextView
+        android:id="@+id/tv_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/img_item_picture"
+        android:layout_toEndOf="@id/img_item_picture"
+        android:layout_marginStart="10dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor = "@color/darkchoco"
+        tools:text="Nama Makanan" />
+
+    <LinearLayout
+        android:id="@+id/layout_quantity_buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_item_name"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="19dp"
+        android:layout_toEndOf="@id/img_item_picture"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btn_decrement"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:background="@drawable/button_min"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/tv_quantity"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:gravity="center"
+            android:text="1"
+            android:textSize="15sp"
+            android:textColor = "@color/choco" />
+
+        <ImageButton
+            android:id="@+id/btn_increment"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:background="@drawable/button_plus"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/btn_trash"
+            android:layout_width="18.95dp"
+            android:layout_height="22.25dp"
+            android:layout_toEndOf="@id/btn_increment"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/trash"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/btn_trash"
+            android:layout_marginStart="60dp"
+            tools:text="Harga Makanan"
+            android:textAppearance="@style/price" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,145 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="4dp"
+    card_view:cardCornerRadius="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <!-- Placeholder for the image -->
+        <ImageView
+            android:id="@+id/img_item_picture"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="16dp"
+            android:scaleType="centerCrop"
+            tools:src="@tools:sample/avatars" />
+
+        <!-- Name of the dish -->
+        <TextView
+            android:id="@+id/tv_item_nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/img_item_picture"
+            android:layout_toEndOf="@id/img_item_picture"
+            android:layout_toRightOf="@id/img_item_picture"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor = "@color/darkchoco"
+            tools:text="Nama Makanan" />
+
+        <TextView
+            android:id="@+id/tv_item_harga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_item_nama"
+            android:layout_alignStart="@id/tv_item_nama"
+            android:layout_alignLeft="@id/tv_item_nama"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor = "@color/darkchoco"
+            tools:text="Harga" />
+
+        <!-- Description of the dish -->
+        <TextView
+            android:id="@+id/tv_item_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_item_harga"
+            android:layout_alignStart="@id/tv_item_harga"
+            android:layout_alignLeft="@id/tv_item_harga"
+            android:layout_marginTop="4dp"
+            android:textSize="10sp"
+            android:textColor = "@color/choco"
+            tools:text="Detail Makanan" />
+
+        <!-- Quantity layout -->
+        <LinearLayout
+            android:id="@+id/layout_quantity_buttons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_item_detail"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="20dp"
+            android:layout_toEndOf="@id/img_item_picture"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <!--android:visibility="gone"-->
+
+            <ImageButton
+                android:id="@+id/btn_decrement"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:background="@drawable/button_min"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/tv_quantity"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="0dp"
+                android:gravity="center"
+                android:text="1"
+                android:textSize="15sp"
+                android:textColor = "@color/choco" />
+
+            <ImageButton
+                android:id="@+id/btn_increment"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:background="@drawable/button_plus"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/btn_trash"
+                android:layout_width="22.95dp"
+                android:layout_height="26.25dp"
+                android:layout_toEndOf="@id/btn_increment"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/trash"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <!-- Order and Wishlist buttons -->
+        <LinearLayout
+            android:id="@+id/layout_buttons_order_wishlist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_quantity_buttons"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_set_order"
+                style="@style/ButtonMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:text="ORDER" />
+            />
+
+            <Button
+                android:id="@+id/btn_set_wishlist"
+                style="@style/ButtonMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="WISHLIST" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

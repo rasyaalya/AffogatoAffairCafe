@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+    <TextView
+        android:id="@+id/textViewCreateAccount"
+        android:layout_width="274dp"
+        android:layout_height="76dp"
+        android:text="Create An Account"
+        style="@style/heading"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"/>
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        style="@style/EditTextRounded"
+        android:hint="Phone Number"
+        android:layout_below="@id/textViewCreateAccount"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:inputType="phone"/>
+    <CheckBox
+        android:id="@+id/checkboxTermsConditions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextPhone"
+        android:layout_marginTop="16dp"
+        android:text="I agree with Terms Of Services and Privacy Policy."
+        android:textSize="13sp"
+        android:textColor="@color/choco"/>
+    <Button
+        android:id="@+id/buttonSignUp"
+        style="@style/Button"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:text="Sign Up"
+        android:layout_below="@id/checkboxTermsConditions"
+        android:layout_marginTop="24dp"/>
+    <TextView
+        android:id="@+id/textViewSignInPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Already have an account? Sign In"
+        android:textSize="13sp"
+        android:textColor="@color/darkchoco"
+        android:layout_below="@id/buttonSignUp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"/>
+
+</RelativeLayout>

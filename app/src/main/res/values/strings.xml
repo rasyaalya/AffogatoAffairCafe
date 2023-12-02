@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">AffogatoAffairCafe</string>
+    <string name="nama_menu"> Nama Makanan </string>
+    <string name="detail">Detail</string>
+    <string name="list">List</string>
+    <string name="with_cardview">with CardView</string>
+    <string name="order">Order</string>
+    <string name="wishlist">Wishlist</string>
+    <string name="harga">Price</string>
+    <string name="title_home">Home</string>
+    <string name="title_order">Order</string>
+    <string name="title_profile">Profile</string>
+
+    <string name="checkout">Checkout</string>
+    <string name="order_detail">Order details</string>
+    <string name="add">Add</string>
+
+    <string name="total">Total</string>
+    <string name="grandtotal">Rp165.000</string>
+
+    <string name="proceed">Proceed to Payment</string>
+
+    <string name="payment">Payment Methods</string>
+    <string name="connected_payments">Connected payments</string>
+
+    <string name="mastercard">Mastercard \n****1312</string>
+    <string name="gopay">GoPay \n****1104</string>
+    <string name="dana">Dana \n****0101</string>
+    <string name="ovo">OVO \n****1909</string>
+    <string name="shopeepay">ShopeePay \n****1601</string>
+    <string name="blu">blu \n****2703</string>
+    <string name="confirm">Confirm Payment</string>
+
+    <string name="successful">Payment Successful</string>
+    <string name="confirmation">Your order is confirmed. Check the status of your orders on the Ongoing History page.</string>
+    <string name="back_to_home">Back to Home</string>
+
+</resources>

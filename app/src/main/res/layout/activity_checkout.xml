@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/checkout_page"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="#FFFFFF">
+
+        <!-- Checkout Title -->
+        <TextView
+            android:id="@+id/checkout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="32dp"
+            android:text="@string/checkout"
+            android:textAppearance="@style/heading"
+            android:gravity="center_horizontal|center_vertical" />
+
+        <!-- Parent RelativeLayout for positioning -->
+        <RelativeLayout
+            android:id="@+id/order_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/checkout"
+            android:layout_marginTop="20dp">
+
+            <!-- Order Details Label -->
+            <TextView
+                android:id="@+id/order_detail"
+                android:layout_width="100dp"
+                android:layout_height="19dp"
+                android:layout_alignParentStart="true"
+                android:text="@string/order_detail"
+                android:textAppearance="@style/subtitle" />
+
+            <Button
+                android:id="@+id/button_add"
+                style="@style/btn_add"
+                android:layout_alignTop="@id/order_detail"
+                android:text="@string/add"
+                android:layout_marginLeft="300dp" />
+        </RelativeLayout>
+
+        <!-- Container for Dynamic Item Views -->
+        <LinearLayout
+            android:id="@+id/item_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/order_add"
+            android:layout_marginTop="25dp" >
+            <!-- Dynamic item views will be added here programmatically -->
+        </LinearLayout>
+
+        <!-- Line Separator -->
+        <View
+            android:id="@+id/line_separator"
+            android:layout_width="320dp"
+            android:layout_height="1dp"
+            android:layout_below="@id/item_container"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/line_separator"
+            android:layout_marginTop="25dp" />
+
+        <!-- Parent RelativeLayout for positioning -->
+        <RelativeLayout
+            android:id="@+id/grand_total"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line_separator"
+            android:layout_marginTop="20dp" >
+
+            <!-- Total Label -->
+            <TextView
+                android:id="@+id/total"
+                android:layout_width="176dp"
+                android:layout_height="25dp"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="32dp"
+                android:text="@string/total"
+                android:textAppearance="@style/total" />
+
+            <!-- Total Price -->
+            <TextView
+                android:id="@+id/total_price"
+                android:layout_width="94dp"
+                android:layout_height="25dp"
+                android:layout_alignTop="@id/total"
+                android:layout_toEndOf="@id/total"
+                android:layout_marginLeft="45dp"
+                tools:text="Total Harga"
+                android:textAppearance="@style/total" />
+        </RelativeLayout>
+
+        <!-- Proceed to Payment Button -->
+        <Button
+            android:id="@+id/button_proceed"
+            style="@style/Button"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:text="@string/proceed"
+            android:layout_below="@id/grand_total"
+            android:layout_marginTop="25dp" />
+
+    </RelativeLayout>
+</ScrollView>

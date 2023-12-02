@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <!-- Check Mark Image -->
+    <ImageView
+        android:id="@+id/checkmark"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@drawable/successful"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"/>
+
+    <!-- Payment Successful Text -->
+    <TextView
+        android:id="@+id/successful"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/checkmark"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="@string/successful"
+        android:textAppearance="@style/heading" />
+
+    <!-- Order Confirmation Text -->
+    <TextView
+        android:id="@+id/confirmation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/successful"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:gravity="center_horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="@string/confirmation"
+        android:textAppearance="@style/heading2" />
+
+    <!-- Back to Home Button -->
+    <Button
+        android:id="@+id/button_to_home"
+        style="@style/Button"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_below="@id/confirmation"
+        android:layout_marginTop="25dp"
+        android:text="@string/back_to_home" />
+
+</RelativeLayout>

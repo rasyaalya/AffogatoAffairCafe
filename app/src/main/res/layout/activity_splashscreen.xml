@@ -1,0 +1,16 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_splashscreen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:gravity="center"
+    tools:context=".SignUpSignIn.splashscreen">
+    <ImageView
+        android:layout_width="360dp"
+        android:layout_height="260dp"
+        android:id="@+id/logo"
+        android:src="@drawable/logo"
+        android:layout_centerInParent="true" />
+</RelativeLayout>

@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/payment_page"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <!-- Payment Methods Title -->
+    <TextView
+        android:id="@+id/payment_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_marginTop="20dp"
+        android:text="@string/payment"
+        android:textAppearance="@style/heading" />
+
+    <!-- Connected Payments Label -->
+    <TextView
+        android:id="@+id/connected_payments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/payment_title"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
+        android:text="@string/connected_payments"
+        android:textAppearance="@style/subtitle" />
+
+    <RadioGroup
+        android:id="@+id/payment_methods_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="30dp"
+        android:layout_below="@id/connected_payments" >
+
+        <!-- Mastercard -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" >
+
+            <View
+                android:id="@+id/mastercard_container"
+                android:layout_width="315dp"
+                android:layout_height="53dp"
+                android:background="@drawable/payment_container" />
+
+            <ImageView
+                android:id="@+id/mastercard_image"
+                android:layout_width="43dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/mastercard" />
+
+            <TextView
+                android:id="@+id/mastercard"
+                android:layout_width="176dp"
+                android:layout_height="34dp"
+                android:layout_toRightOf="@id/mastercard_image"
+                android:layout_marginLeft="16dp"
+                android:layout_centerVertical="true"
+                android:text="@string/mastercard"
+                android:textAppearance="@style/payment" />
+
+            <RadioButton
+                android:id="@+id/radio_mastercard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="25dp" />
+        </RelativeLayout>
+
+        <!-- GoPay -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/radio_mastercard"
+            android:layout_marginTop="16dp">
+
+            <View
+                android:id="@+id/gopay_container"
+                android:layout_width="315dp"
+                android:layout_height="53dp"
+                android:background="@drawable/payment_container" />
+
+            <ImageView
+                android:id="@+id/gopay_image"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/gopay" />
+
+            <TextView
+                android:id="@+id/gopay_text"
+                android:layout_width="176dp"
+                android:layout_height="34dp"
+                android:layout_toRightOf="@id/gopay_image"
+                android:layout_marginLeft="29dp"
+                android:layout_centerVertical="true"
+                android:text="@string/gopay"
+                android:textAppearance="@style/payment" />
+
+            <RadioButton
+                android:id="@+id/radio_gopay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="25dp" />
+        </RelativeLayout>
+
+        <!-- Dana -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/radio_gopay"
+            android:layout_marginTop="16dp">
+
+            <View
+                android:id="@+id/dana_container"
+                android:layout_width="315dp"
+                android:layout_height="53dp"
+                android:background="@drawable/payment_container" />
+
+            <ImageView
+                android:id="@+id/dana_image"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="15dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/dana" />
+
+            <TextView
+                android:id="@+id/dana_text"
+                android:layout_width="176dp"
+                android:layout_height="34dp"
+                android:layout_toRightOf="@id/dana_image"
+                android:layout_marginLeft="29dp"
+                android:layout_centerVertical="true"
+                android:text="@string/dana"
+                android:textAppearance="@style/payment" />
+
+            <RadioButton
+                android:id="@+id/radio_dana"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="25dp" />
+        </RelativeLayout>
+
+        <!-- OVO -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/radio_dana"
+            android:layout_marginTop="16dp">
+
+            <View
+                android:id="@+id/ovo_container"
+                android:layout_width="315dp"
+                android:layout_height="53dp"
+                android:background="@drawable/payment_container" />
+
+            <ImageView
+                android:id="@+id/ovo_image"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="15dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/ovo" />
+
+            <TextView
+                android:id="@+id/ovo_text"
+                android:layout_width="176dp"
+                android:layout_height="34dp"
+                android:layout_toRightOf="@id/ovo_image"
+                android:layout_marginLeft="29dp"
+                android:layout_centerVertical="true"
+                android:text="@string/ovo"
+                android:textAppearance="@style/payment" />
+
+            <RadioButton
+                android:id="@+id/radio_ovo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="25dp" />
+        </RelativeLayout>
+
+        <!-- ShopeePay -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/radio_ovo"
+            android:layout_marginTop="16dp">
+
+            <View
+                android:id="@+id/shopeepay_container"
+                android:layout_width="315dp"
+                android:layout_height="53dp"
+                android:background="@drawable/payment_container" />
+
+            <ImageView
+                android:id="@+id/shopeepay_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/shopeepay" />
+
+            <TextView
+                android:id="@+id/shopeepay_text"
+                android:layout_width="176dp"
+                android:layout_height="34dp"
+                android:layout_toRightOf="@id/shopeepay_image"
+                android:layout_marginLeft="19dp"
+                android:layout_centerVertical="true"
+                android:text="@string/shopeepay"
+                android:textAppearance="@style/payment" />
+
+            <RadioButton
+                android:id="@+id/radio_shopeepay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="25dp" />
+        </RelativeLayout>
+
+        <!-- blu -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/radio_shopeepay"
+            android:layout_marginTop="16dp">
+
+            <View
+                android:id="@+id/blu_container"
+                android:layout_width="315dp"
+                android:layout_height="53dp"
+                android:background="@drawable/payment_container" />
+
+            <ImageView
+                android:id="@+id/blu_image"
+                android:layout_width="43dp"
+                android:layout_height="22.39dp"
+                android:layout_marginStart="15dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/blu" />
+
+            <TextView
+                android:id="@+id/blu_text"
+                android:layout_width="176dp"
+                android:layout_height="34dp"
+                android:layout_toRightOf="@id/blu_image"
+                android:layout_marginLeft="16dp"
+                android:layout_centerVertical="true"
+                android:text="@string/blu"
+                android:textAppearance="@style/payment" />
+
+            <RadioButton
+                android:id="@+id/radio_blu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="25dp" />
+        </RelativeLayout>
+
+    </RadioGroup>
+
+    <!-- Confirm Payment Button -->
+    <Button
+        android:id="@+id/button_confirm"
+        style="@style/Button"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_below="@id/payment_methods_group"
+        android:layout_marginTop="25dp"
+        android:text="@string/confirm" />
+
+</RelativeLayout>

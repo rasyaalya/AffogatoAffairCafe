@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/imageViewSuccess"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@drawable/successful"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"/>
+
+    <TextView
+        android:id="@+id/textViewSuccessMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageViewSuccess"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="You have successfully\ncreated account"
+        android:textAlignment="center"
+        style="@style/heading2"/>
+
+    <Button
+        android:id="@+id/buttonSignIn"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_below="@id/textViewSuccessMessage"
+        android:layout_marginTop="24dp"
+        android:text="Sign In"
+        style="@style/Button"/>
+</RelativeLayout>
