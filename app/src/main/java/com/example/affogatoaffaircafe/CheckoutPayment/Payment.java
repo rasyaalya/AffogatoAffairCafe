@@ -114,60 +114,6 @@ public class Payment extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void sendOrderToServer(int userId, String phoneNumber, ArrayList<Menu> cartItems, double totalPrice, String paymentType) {
-        new AsyncTask<Void, Void, String>() {
-            @Override
-            protected String doInBackground(Void... voids) {
-                try {
-                    URL url = new URL("http://10.0.2.2/ProjectMobile/insert_order.php"); // Sesuaikan dengan URL server Anda
-                    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                    conn.setRequestMethod("POST");
-                    conn.setDoOutput(true);
-
-                    Uri.Builder builder = new Uri.Builder()
-                            .appendQueryParameter("user_id", String.valueOf(userId))
-                            .appendQueryParameter("phone_number", phoneNumber)
-                            .appendQueryParameter("order_details", convertCartItemsToJson(cartItems))
-                            .appendQueryParameter("total_price", String.valueOf(totalPrice))
-                            .appendQueryParameter("payment_type", paymentType);
-                    String query = builder.build().getEncodedQuery();
-
-                    OutputStream os = conn.getOutputStream();
-                    BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(os, "UTF-8"));
-                    writer.write(query);
-                    writer.flush();
-                    writer.close();
-                    os.close();
-
-                    int responseCode = conn.getResponseCode();
-                    if (responseCode == HttpURLConnection.HTTP_OK) {
-                        BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                        StringBuilder response = new StringBuilder();
-                        String line;
-                        while ((line = br.readLine()) != null) {
-                            response.append(line);
-                        }
-                        br.close();
-                        return response.toString();
-                    } else {
-                        return "Server returned non-OK status: " + responseCode;
-                    }
-                } catch (Exception e) {
-                    return "Error sending data to server: " + e.getMessage();
-                }
-            }
-
-            @Override
-            protected void onPostExecute(String result) {
-                super.onPostExecute(result);
-                Toast.makeText(Payment.this, result, Toast.LENGTH_LONG).show();
-                if (result.equals("Data successfully saved")) { // Periksa pesan sukses dari server
-                    proceedToPaymentSuccess();
-                }
-            }
-        }.execute();
-    }
-
     private String convertCartItemsToJson(ArrayList<Menu> cartItems) {
         // Implementasi konversi cartItems ke JSON string
         // Contoh sederhana, silakan sesuaikan dengan struktur data Menu Anda
