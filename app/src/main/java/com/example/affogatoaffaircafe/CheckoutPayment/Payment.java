@@ -77,7 +77,6 @@ public class Payment extends AppCompatActivity {
                 Toast.makeText(Payment.this, "Please choose a payment method", Toast.LENGTH_SHORT).show();
             } else {
                 String selectedPaymentMethod = getSelectedPaymentMethod();
-                sendOrderToServer(userId, phoneNumber, cartItems, totalPrice, selectedPaymentMethod);
                 proceedToPaymentSuccess();
             }
         });
