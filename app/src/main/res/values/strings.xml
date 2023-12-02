@@ -32,7 +32,7 @@
     <string name="confirm">Confirm Payment</string>
 
     <string name="successful">Payment Successful</string>
-    <string name="confirmation">Your order is confirmed. Check the status of your orders on the Ongoing History page.</string>
+    <string name="confirmation">Your order is confirmed! \nThank you for ordering.</string>
     <string name="back_to_home">Back to Home</string>
 
 </resources>
