@@ -20,7 +20,7 @@ public class Checkout extends AppCompatActivity {
 
     private LinearLayout itemsLayout;
     private TextView totalTextView;
-    private ArrayList<Menu> selectedItems; // This should be passed from your menu activity
+    private ArrayList<Menu> selectedItems;
     private ArrayList<Menu> cartItems;
 
     @Override
@@ -66,7 +66,6 @@ public class Checkout extends AppCompatActivity {
 
     private ArrayList<Menu> getSelectedMenuItems() {
         // This method should return the actual list of selected menu items
-        // For now, returning an empty list for example purposes
         return new ArrayList<>();
     }
 
@@ -81,7 +80,7 @@ public class Checkout extends AppCompatActivity {
         ImageButton plusButton = itemView.findViewById(R.id.btn_increment);
         ImageButton trashButton = itemView.findViewById(R.id.btn_trash);
 
-        // Set the values from the 'item' object to your views
+        // Set the values from the 'item' object to views
         itemName.setText(item.getNama());
 
         // Set the price based on quantity
@@ -91,7 +90,7 @@ public class Checkout extends AppCompatActivity {
         itemPrice.setText(String.format("%.2f", totalPriceForItem));
 
         // Set the item image
-        Glide.with(this) // Use 'this' because it's an activity context
+        Glide.with(this)
                 .load(item.getPicture()) // Use the URL or drawable from the 'item'
                 .into(itemImage);
 
