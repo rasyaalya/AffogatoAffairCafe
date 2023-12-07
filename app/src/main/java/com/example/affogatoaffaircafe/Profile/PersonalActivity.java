@@ -52,7 +52,6 @@ public class PersonalActivity extends Activity {
 
         // Initialize views
         initViews();
-        setupBottomNavigationView();
 
         // Retrieve the phone number from SharedPreferences
         SharedPreferences prefs = getSharedPreferences("UserPrefs", MODE_PRIVATE);
@@ -107,31 +106,10 @@ public class PersonalActivity extends Activity {
         rbFemale = findViewById(R.id.rbFemale);
         btnSave = findViewById(R.id.btnSave);
         btnCancel = findViewById(R.id.btnCancel);
-        bottomNavigationView = findViewById(R.id.nav_view);
+
     }
 
-    private void setupBottomNavigationView() {
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int itemId = item.getItemId();
-                if (itemId == R.id.navigation_home) {
-                    Intent intent = new Intent(PersonalActivity.this, MainActivity.class);
-                    intent.putExtra("phone_number", phoneNumber); // Pass the phone number to PersonalActivity
-                    startActivity(intent);
-                    return true;
-                } else if (itemId == R.id.navigation_order) {// TODO: Implement your logic or start new Activity for Order
-                    return true;
-                } else if (itemId == R.id.navigation_profile) {
-                    Intent intent = new Intent(PersonalActivity.this, PersonalActivity.class);
-                    intent.putExtra("phone_number", phoneNumber); // Pass the phone number to PersonalActivity
-                    startActivity(intent);
-                    return true;
-                }
-                return false;
-            }
-        });
-    }
+
 
     private class FetchUserDataTask extends AsyncTask<String, Void, String> {
         @Override

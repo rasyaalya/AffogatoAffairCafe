@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private ListMenuAdapter listMenuAdapter;
     private CardViewMenuAdapter cardViewMenuAdapter;
     private BottomNavigationView bottomNavigationView;
-    private String phoneNumber; // Add this line to hold the phone number
+    private String phoneNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

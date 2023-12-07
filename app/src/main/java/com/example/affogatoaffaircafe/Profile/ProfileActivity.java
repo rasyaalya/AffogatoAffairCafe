@@ -3,22 +3,38 @@ package com.example.affogatoaffaircafe.Profile;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
-import androidx.appcompat.app.AppCompatActivity;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.affogatoaffaircafe.Menu.CardViewMenuAdapter;
+import com.example.affogatoaffaircafe.Menu.ListMenuAdapter;
+import com.example.affogatoaffaircafe.Menu.MainActivity;
 import com.example.affogatoaffaircafe.R;
 import com.example.affogatoaffaircafe.SignUpSignIn.Landing;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ProfileActivity extends AppCompatActivity {
 
     private LinearLayout editProfile, changePassword;
     private View signOut;
+    private BottomNavigationView bottomNavigationView;
+    private RecyclerView rvMenu;
+    private ListMenuAdapter listMenuAdapter;
+    private CardViewMenuAdapter cardViewMenuAdapter;
+    private String phoneNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        bottomNavigationView = findViewById(R.id.nav_view_profile);
+        bottomNavigationView.setSelectedItemId(R.id.navigation_profile);
 
         // Initialize your LinearLayouts
         editProfile = findViewById(R.id.edit_profile);
@@ -26,28 +42,53 @@ public class ProfileActivity extends AppCompatActivity {
         signOut = findViewById(R.id.sign_out);
 
         // Set click listeners for each LinearLayout
-        editProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ProfileActivity.this, PersonalActivity.class);
-                startActivity(intent);
-            }
+        editProfile.setOnClickListener(view -> {
+            Intent intent = new Intent(ProfileActivity.this, PersonalActivity.class);
+            startActivity(intent);
         });
 
-        changePassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ProfileActivity.this, PersonalActivity.class);
-                startActivity(intent);
-            }
+        changePassword.setOnClickListener(view -> {
+            Intent intent = new Intent(ProfileActivity.this, PersonalActivity.class);
+            startActivity(intent);
         });
 
-        signOut.setOnClickListener(new View.OnClickListener() {
+        signOut.setOnClickListener(view -> signOut());
+
+        setupBottomNavigationView();
+    }
+
+    private void setupBottomNavigationView() {
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onClick(View view) {
-                signOut();
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int itemId = item.getItemId();
+                if (itemId == R.id.navigation_home) {
+                    showRecyclerList();
+                    return true;
+                } else if (itemId == R.id.navigation_order) {// TODO: Implement your logic or start new Activity for Order
+                    showRecyclerCardView();
+                    return true;
+                } else if (itemId == R.id.navigation_profile) {
+                    navigateToProfile();
+                    return true;
+                }
+                return false;
             }
         });
+    }
+
+    private void showRecyclerList() {
+        rvMenu.setAdapter(listMenuAdapter);
+    }
+
+    private void showRecyclerCardView() {
+        rvMenu.setAdapter(cardViewMenuAdapter);
+    }
+
+    private void navigateToProfile() {
+        Intent intent = new Intent(ProfileActivity.this, ProfileActivity.class);
+        intent.putExtra("phone_number", phoneNumber); // Pass the phone number to PersonalActivity
+        startActivity(intent);
     }
 
     private void signOut() {
